@@ -4,18 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
     <title>Document</title>
+    <style>
+      body{
+        background-color: #ebebeb;
+      }
+      .mainForm{
+        display: flex;
+        flex-direction: column;
+        margin:auto;
+        gap: 20px;
+        max-width: 450px;
+        margin-top: 100px;
+      }
+      .submitButton{
+        margin: 10px auto 10px 30%;
+      }
+    </style>
   </head>
   <body>
-    <form action="/create_ec2" method="POST" class="btn btn-primary">
-      <table>
+    <div class="mainForm">
+
+      <form action="/create_ec2" method="POST" class="">
+        <table>
         <tr>
           <td>ImageId</td>
           <td>
             <input
-              type="text"
-              name="imageid"
-              id=""
+            class="form-control"
+            type="text"
+            name="imageid"
+            id=""
               placeholder="Enter ImageId"
             />
           </td>
@@ -24,6 +47,8 @@
           <td>MinCount</td>
           <td>
             <input
+            class="form-control"
+
               type="number"
               name="mincount"
               id=""
@@ -35,34 +60,37 @@
           <td>MaxCount</td>
           <td>
             <input
+            class="form-control"
+
               type="number"
               name="maxcount"
               id=""
               placeholder="Enter MaxCount"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>InstanceType</td>
-          <td>
-            <input
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>InstanceType</td>
+            <td>
+              <input
+            class="form-control"
+
               type="text"
               name="instancetype"
               id=""
               placeholder="Enter InsanceType"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="submit" value="submit" class="btn btn-primary" />
-          </td>
-        </tr>
-      </table>
-    </form>
-    <h6 id="imageid">ami-013f17f36f8b1fefb</h6>
-    <h6>MinCount: Minimum number of EC2 instances to create</h6>
-    <h6>MaxCount: Maximum number of EC2 instances to create</h6>
-    <h6>InstanceType - eg:- t2.micro</h6>
+              />
+            </td>
+          </tr>
+          
+        </table>
+            <input  type="submit" value="submit" class="btn btn-primary submitButton" />
+           
+      </form>
+      <h6 id="imageid">ami-013f17f36f8b1fefb</h6>
+      <h6>MinCount: Minimum number of EC2 instances to create</h6>
+      <h6>MaxCount: Maximum number of EC2 instances to create</h6>
+      <h6>InstanceType - eg:- t2.micro</h6>
+    </div>
   </body>
 </html>
